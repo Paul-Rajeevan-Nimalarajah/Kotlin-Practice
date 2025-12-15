@@ -9,9 +9,21 @@ fun main() {
     //println(myList[myList.lastIndex])
 
     // val vs var
-    var otherfriends = mutableListOf("Mark","May")
+    val otherfriends = mutableListOf("Mark","May")
     //otherfriends.add("Paul")
     println(otherfriends)
+    val score = findFriendsScore(null)
+    println(score)
+}
 
-
+fun findFriendsScore(friends: MutableList<String>?): Int{
+    if (friends == null){
+        return 0
+    }
+    var score= 0
+    //val friend: String
+    for (friend in friends){
+        score += friend.length
+    }
+    return score
 }
